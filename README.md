@@ -1,4 +1,4 @@
-# sell
+# 基于vue2.0 + vuex 实现的一个小DEMO
 
 > sell app
 
@@ -18,4 +18,4 @@ npm run build
 npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+项目很小，但是vue全家桶都有使用，vue-router，vuex，axios，项目结构和代码内容都能很容易看懂。非常适合新手参考学习。欢迎多多交流
