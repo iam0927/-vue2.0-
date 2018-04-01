@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import axios from 'axios'
 import router from './router'
-import store from './vuex'
+import store from './store'
 
 Vue.prototype.$axios = axios
 Vue.prototype.$host = process.env.NODE_ENV === 'development' ? '/api' : ''

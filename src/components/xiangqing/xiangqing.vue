@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   data () {
     return {
@@ -27,9 +28,8 @@ export default {
     }
   },
   computed: {
-    name () {
-      return this.$store.state.name
-    }
+    // 获取的是状态对象
+    ...mapState(['name'])
   },
   created () {
     this.$axios.get(this.$host + '/test/data.json')

@@ -2,13 +2,14 @@
   <div>这是评论页哟
     <p>
       姓名是<input type="text" v-model="nameT">
-      <button @click="sendName">点击发送姓名</button>
+      <button @click="NEW_NAME(nameT)">点击发送姓名</button>
     </p>
     <span></span>
   </div>
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
   data () {
     return {
@@ -16,9 +17,11 @@ export default {
     }
   },
   methods: {
-    sendName () {
-      this.$store.commit('newName', this.nameT)
-    }
+    // sendName () {
+    //   this.$store.commit('newName', this.nameT)
+    // }
+    // 获取的是状态方法
+    ...mapMutations(['NEW_NAME'])
   }
 }
 </script>
