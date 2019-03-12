@@ -19,3 +19,5 @@ npm run build --report
 ```
 
 项目很小，但是vue全家桶都有使用，vue-router，vuex，axios，项目结构和代码内容都能很容易看懂。非常适合新手参考学习。欢迎多多交流
+
+增加了动态换肤功能

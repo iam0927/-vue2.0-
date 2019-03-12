@@ -4,7 +4,8 @@
   <div class="goods_list">
     <router-link  v-for="goods in goodsList" :key="goods.id" :to="{name: 'GoodsList', params: {id: goods.id}}">第{{goods.id}}个</router-link>
   </div>
-  <router-view/>
+  <div class="prop" @click="proNum"></div>
+  <router-view :child-pornum="proStr" />
 </div>
 </template>
 
@@ -31,7 +32,34 @@ export default {
         {
           id: 6
         }
-      ]
+      ],
+      proStr: {
+        num: 1
+      }
+    }
+  },
+  methods: {
+    // proNum () {
+    //   this.proStr.num++
+    // },
+    proNum () {
+      let url = 'http://123.56.6.167:8082/h5/gps/param/findDeviceByNo'
+      this.$axios.get(url, {
+        params: {
+          deviceNo: 12323
+        }
+      }).then((res) => {
+        let data = res.data
+        console.log(data)
+        if (data.resultCode === 0) {
+          let result = data.result
+          // this.manCode = result.manCode
+          if (result.manCode === '1000') {
+            this.proStr.num = result.simNo
+            this.$router.push({name: 'GoodsList'})
+          }
+        }
+      })
     }
   }
 }
@@ -56,6 +84,11 @@ export default {
         justify-content: center;
         align-items: center;
       }
+    }
+    .prop {
+      width: 100%;
+      height: 50px;
+      background: yellowgreen;
     }
   }
 </style>

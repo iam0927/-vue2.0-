@@ -31,7 +31,7 @@ export default {
     // 获取的是状态对象
     ...mapState(['name'])
   },
-  created () {
+/*   created () {
     this.$axios.get(this.$host + '/test/data.json')
     .then(res => {
       this.goods = res.data.goods
@@ -39,7 +39,7 @@ export default {
     .catch(err => {
       console.log(err)
     })
-  },
+  }, */
   methods: {
     achievePing () {
       this.$axios.get(this.$host + '/test/data.json')
